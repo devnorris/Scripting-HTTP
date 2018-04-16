@@ -16,15 +16,11 @@ https.get(options, function (response) {
 
 
   response.on('data', function (data) {
-    console.log('Chunk Recieved. Length:', data.length)
     output += data;
   });
 
   response.on('end' , function() {
-    printHTML(output);
+    callback(output);
   });
-
-
 });
-
 }
