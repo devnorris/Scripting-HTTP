@@ -17,12 +17,14 @@ https.get(requestOptions, function (response) {
 
   response.on('data', function (data) {
     console.log('Chunk Recieved. Length:', data.length)
-    output += data.length;
+    output += data;
   });
 
   response.on('end' , function() {
     console.log('Response stream complete.');
+    console.log(output);
   });
+
 
 });
 
